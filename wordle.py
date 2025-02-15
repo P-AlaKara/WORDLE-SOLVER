@@ -4,10 +4,22 @@ letters_in_word = set()
 letters_not_in_word = set()
 flag = None
 
+def get_feedback(letter):
+    """Gets feedback from user (g, y, or b) and checks for invalid input"""
+    attempts = 3  # Allow 3 attempts before exiting
+    while attempts > 0:
+        feedback = input(f"{letter}: (g or y or b): ").strip().lower()
+        if feedback in {'g', 'y', 'b'}:
+            return feedback
+        print("Invalid input! Please enter 'g' (green), 'y' (yellow), or 'b' (black).")
+        attempts -= 1
+    print("Too many invalid attempts. Exiting program.")
+    exit(1)
+
 def process_feedback(word_guess, word_real, wrong_position_tracker, letters_in_word, letters_not_in_word, flag):
     """Processes user feedback and updates known information about the word"""
     for j, letter in enumerate(word_guess):
-        feedback = input(f"{letter}: (g or y or b): ").strip().lower()
+        feedback = get_feedback(letter)
         
         if feedback == 'g':  # Green: Correct letter, correct position
             word_real[j] = letter
