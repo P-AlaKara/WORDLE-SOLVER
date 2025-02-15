@@ -12,7 +12,7 @@ This is the first sketch version of a simple Wordle solver written in Python. Th
   - **Black (b):** Letter is not in the word at all.
 - Iteratively refines possible words based on user input.
 ## Performance
-- The program produces the correct word an average 85% of the time for all 5 letter words in the English Language (15428 words) and an average of 95% of the time for wordle words (<3000).
+- The program produces the correct word an average 85% of the time for all 5 letter words in the English Language (15428 words) and an average of 95% of the time for wordle words (<3000 words).
 
 ## Installation
 No external dependencies are required. Ensure you have Python installed on your system.
