@@ -104,6 +104,9 @@ for i in range(6):
         print(f"Final word is {str(word_real)}")
         break
     #print(words_to_remove)
-
-    print(f"Words after filtering: {len(valid_words)}")
-    print(list(valid_words)[:10])
+    if valid_words:
+        print(f"Words after filtering: {len(valid_words)}")
+        print(list(valid_words)[:10])
+    else:
+        print("No more valid words. Exiting the program")
+        exit(1)
