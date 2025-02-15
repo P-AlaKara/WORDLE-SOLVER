@@ -10,25 +10,22 @@ letter_to_match = str()
 flag = None
 flag_two = None
 flag_three = None
-new_set = None
 
-with open("words_alpha.txt") as f:
+with open("all_wordle_words.txt") as f:
     english_words = set(f.read().split())
 
 valid_words = {word for word in english_words if len(word) == 5}
 print(len(valid_words))
 
-for i in range(5):
-    if None not in word_real:
-        print(f"Final word is {str(word_real)}")
+for i in range(6):
     wrong_position_tracker = {}
     letters_in_word = []
     letters_not_in_word = []
     if i == 0:
-        word_guess = ['p', 's', 'y', 'c', 'h']
+        word_guess = ['a', 'u', 'd', 'i', 'o']
         print('word_guess')
     if i == 1:
-        word_guess = ['a', 'u', 'd', 'i', 'o']
+        word_guess = ['b', 'l', 'e', 'n', 'd']
     for j in range(5):
         feedback = (input(f"{word_guess[j]}: (g or y or b): "))
         if feedback == 'g':
@@ -70,6 +67,10 @@ for i in range(5):
 
     # Reset flags AFTER processing all words
     flag, flag_two, flag_three = None, None, None
+    
+    if None not in word_real:
+        print(f"Final word is {str(word_real)}")
+        break
     #print(words_to_remove)
     print(f"Words before filtering: {len(valid_words)}")
     print(f"Words to remove: {len(words_to_remove)}")

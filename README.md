@@ -4,7 +4,7 @@
 This is the first sketch version of a simple Wordle solver written in Python. The program attempts to guess the correct five-letter word based on user feedback for each guess.
 
 ## Features
-- Reads from a dictionary of English words (`words_alpha.txt`). This dictionary has been downloaded from https://github.com/dwyl/english-words/blob/master/words_alpha.txt
+- Reads from a list of English words (`all_wordle_words.txt`). This list has been downloaded from https://github.com/zulkarnine/WordleSolver/blob/main/all_wordle_words.txt
 
 - Filters words based on Wordle-style feedback:
   - **Green (g):** Letter is in the correct position.
@@ -12,7 +12,7 @@ This is the first sketch version of a simple Wordle solver written in Python. Th
   - **Black (b):** Letter is not in the word at all.
 - Iteratively refines possible words based on user input.
 ## Performance
-- The program produces the correct word an average 68% of the time.
+- The program produces the correct word an average 85% of the time for all 5 letter words in the English Language (15428 words) and an average of 95% of the time for wordle words (<3000).
 
 ## Installation
 No external dependencies are required. Ensure you have Python installed on your system.
