@@ -1,7 +1,7 @@
 # Wordle Solver (v.1)
 
 ## Overview
-This is the first sketch version of a simple Wordle solver written in Python. The program attempts to guess the correct five-letter word based on user feedback for each guess.
+This is the first sketch version of a simple Wordle solver written in Python. The program attempts to guess the correct five-letter word in a maximum of 6 tries, based on user feedback for each guess.
 
 ## Features
 - Reads from a list of English words (`all_wordle_words.txt`). This list has been downloaded from https://github.com/zulkarnine/WordleSolver/blob/main/all_wordle_words.txt
@@ -31,9 +31,9 @@ No external dependencies are required. Ensure you have Python installed on your 
 
 ## Known Issues & Future Improvements
 - This is a **first sketch version**, and many improvements are planned.
-- The program currently selects the next word arbitrarily; smarter word selection can be implemented.
 - UI/CLI enhancements for better user experience.
-- Performance Optimization.
+- The program currently selects the next word arbitrarily; smarter word selection can be implemented. e.g. Implement a scoring system or heuristic to choose the next guess based on the remaining valid words?
+- Further Performance Optimization?
 
 ## Contributions
 Contributions and feedback are welcome! Feel free to fork the project and make improvements.
