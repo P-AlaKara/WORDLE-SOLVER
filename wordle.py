@@ -1,4 +1,5 @@
 #5 - letter word
+#If double letter word, don't recommend same double letter again
 word_guess = []
 word_real = [None,None,None,None,None]
 letters_in_word = []
@@ -18,6 +19,11 @@ valid_words = {word for word in english_words if len(word) == 5}
 print(len(valid_words))
 
 for i in range(5):
+    if None not in word_real:
+        print(f"Final word is {str(word_real)}")
+    wrong_position_tracker = {}
+    letters_in_word = []
+    letters_not_in_word = []
     if i == 0:
         word_guess = ['p', 's', 'y', 'c', 'h']
         print('word_guess')
@@ -30,10 +36,11 @@ for i in range(5):
             print(f"{word_guess[j]} is at position {j}")
             flag = True
         if feedback == 'y':
+            wrong_position_tracker[word_guess[j]] = j
             letters_in_word.append(word_guess[j])
             flag_two = True
         if feedback == 'b':
-            letters_not_in_word.append(word_guess[j])       #clear letters not in word for each iteration
+            letters_not_in_word.append(word_guess[j])       
             flag_three = True
 
     print(f"letters not in word: {letters_not_in_word}")
@@ -46,8 +53,11 @@ for i in range(5):
                 if not_letter in word:
                     words_to_remove.add(word)
         if flag_two:
-            for yes_letter in letters_in_word:
-                if yes_letter not in word:
+#            for yes_letter in letters_in_word:
+#                if yes_letter not in word:
+#                    words_to_remove.add(word)
+            for yes_letter, position in wrong_position_tracker.items():
+                if yes_letter not in word or yes_letter == word[position]:
                     words_to_remove.add(word)
         if flag:
             for i,letter in enumerate(word_real):
@@ -59,7 +69,6 @@ for i in range(5):
                         words_to_remove.add(word)
 
     # Reset flags AFTER processing all words
-    print(words_to_remove)
     flag, flag_two, flag_three = None, None, None
     #print(words_to_remove)
     print(f"Words before filtering: {len(valid_words)}")
