@@ -11,6 +11,8 @@ This is the first sketch version of a simple Wordle solver written in Python. Th
   - **Yellow (y):** Letter is in the word but in the wrong position.
   - **Black (b):** Letter is not in the word at all.
 - Iteratively refines possible words based on user input.
+## Performance
+- The program produces the correct word an average 68% of the time.
 
 ## Installation
 No external dependencies are required. Ensure you have Python installed on your system.
